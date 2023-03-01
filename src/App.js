@@ -24,6 +24,7 @@ function App() {
 
   const deleteItem = (id)=>{
     console.log(id)
+    setContacts(contacts.filter(contact => contact.id !== id))
     /* const contactsCopy = [...contacts].filter(contact => contact.id !== id)
     setContacts(contactsCopy) */
   }
@@ -49,7 +50,7 @@ function App() {
           <td>{popularity}</td>
           {wonOscar ? <td>🏆</td>:<td></td>}
           {wonEmmy ? <td>🏆</td>:<td></td>}
-          <td><button onClick={deleteItem({id})}>Delete</button></td>
+          <td><button onClick={()=>deleteItem(id)}>Delete</button></td>
         </tr>
       ))}
     </table>      
